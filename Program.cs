@@ -6,20 +6,21 @@ namespace SalarioFuncionario
     {
         static void Main(string[] args)
         {
+
+            Funcionario Funcionario = new Funcionario();
             Console.WriteLine("Informe os dados do Funcionário:\n");
             Console.WriteLine("Informe o nome do Funcionário:");
-            string Nome = Console.ReadLine();
+             Funcionario.Nome = Console.ReadLine();
             Console.WriteLine("Informe o salário bruto  do Funcionário:");
-            double SalarioBruto = double.Parse(Console.ReadLine());
+             Funcionario.SalarioBruto = double.Parse(Console.ReadLine());
             Console.WriteLine("Informe a porcentagem de imposto sobre o salário bruto  do Funcionário:");
-            double Imposto = double.Parse(Console.ReadLine());
-            double SalarioLiquido = SalarioBruto - (SalarioBruto * Imposto / 100); 
-            Console.WriteLine($"O funcionário {Nome} tem um salário Líquido de R$ {SalarioLiquido.ToString("F2")}");
-            Console.WriteLine("Informe a porcentagem de aumento que será dada sobre seu salário liquido");
+             Funcionario.Imposto = double.Parse(Console.ReadLine());
+            double SalarioLiquido = Funcionario.CalcularSalarioLIquido(); 
+            Console.WriteLine($"O funcionário {Funcionario.Nome} tem um salário Líquido de R$ {SalarioLiquido.ToString("F2")}");
+            Console.WriteLine("Informe a porcentagem de aumento que será dado sobre seu salário bruto");
             double AumentoSalario = double.Parse(Console.ReadLine());
-            double NovoSalario = SalarioLiquido + (SalarioLiquido * AumentoSalario / 100); 
-            Console.WriteLine($"O Funcionário {Nome} tem um aumento no seu salário de: R$ {NovoSalario.ToString("F2")}");
-
+             Funcionario.AumentarSalario(AumentoSalario);
+            Console.WriteLine($"O Funcionário {Funcionario.Nome} tem um aumento no seu salário bruto de: R$ {Funcionario.SalarioBruto.ToString("F2")}");
 
 
 
