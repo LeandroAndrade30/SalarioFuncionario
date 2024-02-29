@@ -20,9 +20,9 @@ namespace SalarioFuncionario
             Console.WriteLine("Informe a porcentagem de aumento que será dado sobre seu salário bruto");
             double AumentoSalario = double.Parse(Console.ReadLine());
              Funcionario.AumentarSalario(AumentoSalario);
-            Console.WriteLine($"O Funcionário {Funcionario.Nome} tem um aumento no seu salário bruto de: R$ {Funcionario.SalarioBruto.ToString("F2")}");
+            Console.WriteLine($"O Funcionário {Funcionario.Nome} tem um salário líquido de: R$ {SalarioLiquido} e um salário aumentado para : R$ {Funcionario.SalarioBruto + SalarioLiquido}");
 
-
+            
 
         }
     }
